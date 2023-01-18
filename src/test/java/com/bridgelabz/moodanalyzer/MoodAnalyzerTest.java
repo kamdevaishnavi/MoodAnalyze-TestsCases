@@ -7,8 +7,15 @@ import org.junit.Test;
 public class MoodAnalyzerTest {
     @Test
     public void givenMessage_whenSad_shouldReturnSadMood() {
-        MoodAnalyzer obj = new MoodAnalyzer();
-        String mood = obj.analyseMood("I am in sad mood");
+        MoodAnalyzer obj = new MoodAnalyzer("I am in sad mood");
+        String mood = obj.analyseMood();
         Assert.assertEquals("SAD", mood);
+    }
+
+    @Test
+    public void givenMessage_whenSad_shouldReturnHappyMood() {
+        MoodAnalyzer obj = new MoodAnalyzer("i am in happy mood");
+        String mood = obj.analyseMood();
+        Assert.assertEquals("HAPPY", mood);
     }
 }
